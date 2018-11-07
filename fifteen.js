@@ -30,12 +30,11 @@ $(document).ready(function(){
 			
 	c[i].onclick = function(){
 		c[i].classList.add("movablepiece");
-		c[i].style.
 		if(moveTile(parseInt(this.innerHTML))){
-			swap(this.innerHTML-1);
+			change(this.innerHTML-1);
 			return;
 		}
-	};		
+	};	
 			
 	sbutton.onclick = function(){
 		for (var i=0; i<100; i++){
@@ -43,33 +42,31 @@ $(document).ready(function(){
 			if (n == 0){
 				let act = moveUp(emprow,empcol);
 				if ( act != -1){
-					swap(act);
+					change(act);
 				}
 			}
 			if (n == 1){
 				let act = moveDown(emprow,empcol);
 				if ( act != -1){
-					swap(act);
+					change(act);
 				}
 			}
 			if (n == 2){
 				let act = moveLeft(emprow,empcol);
 				if ( act != -1){
-					swap(act);
+					change(act);
 				}
 			}
 			if (n == 3){
 				let act = moveRight(emprow,empcol);
 				if (act != -1){
-					swap(act);
+					change(act);
 				}
 			}
 		}
 	}		
 	}	
 		
-			
-
 	function moveUp(x,y){
 	    var xint= parseInt(x);
 	    var yint= parseInt(y);
@@ -134,8 +131,7 @@ $(document).ready(function(){
 	        return -1;
 	    } 
 	}
-	
-	
+		
 	function moveTile(p){
 		if(moveUp(emprow,empcol) == (p-1)){
 			return true;
@@ -151,8 +147,7 @@ $(document).ready(function(){
 		}
 	}
 
-
-	function swap(p){
+	function change(p){
 		var t = c[p].style.top;
 		c[p].style.top= empcol;
 		empcol = t;
@@ -161,13 +156,5 @@ $(document).ready(function(){
 		c[p].style.left = emprow;
 		emprow = t;
 	}
-
-	
-      
-	
-	
-	
-
-
 }
 })
