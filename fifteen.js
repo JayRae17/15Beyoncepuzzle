@@ -67,6 +67,8 @@ $(document).ready(function(){
 		}
 	}		
 	}	
+		
+			
 
 	function moveUp(x,y){
 	    var xint= parseInt(x);
@@ -159,5 +161,13 @@ $(document).ready(function(){
 		c[p].style.left = emprow;
 		emprow = t;
 	}
+
+	
+      
+	
+	
+	
+
+
 }
 })
